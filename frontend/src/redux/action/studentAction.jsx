@@ -8,7 +8,7 @@ import {
 } from "../actionTypes";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-const url = "";
+const url = "https://erp-backend-zeta.vercel.app";
 
 export const setChatHistory = (data) => {
 	return {

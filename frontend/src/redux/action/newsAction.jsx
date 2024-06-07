@@ -11,7 +11,7 @@ import {
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "../../api/axios";
-const url = "";
+const url = "https://erp-backend-zeta.vercel.app";
 
 export const setChatHistory = (data) => {
 	return {
