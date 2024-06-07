@@ -1,3 +1,4 @@
+/* eslint-disable import/first */
 import { lazy, Suspense } from "react";
 import { useEffect, useState } from "react";
 import "./App.css";

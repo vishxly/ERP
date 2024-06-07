@@ -59,7 +59,7 @@ export const fetchStudents = (department, year, section) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: "/api/dekan/fetchStudents",
+				url: "api/dekan/fetchStudents",
 				data: { department, year, section },
 			});
 			dispatch(fetchStudentsHelper(data.result));
@@ -89,7 +89,7 @@ export const uploadMarks = (
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: "/api/dekan/uploadMarks",
+				url: "api/dekan/uploadMarks",
 				data: {
 					subjectName,
 					exam,
@@ -118,7 +118,7 @@ export const dekanAddStudent = (studentCredential) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: "/api/dekan/addStudent",
+				url: "api/dekan/addStudent",
 				data: studentCredential,
 			});
 			dispatch(dekanAddStudentFlag(true));
@@ -139,7 +139,7 @@ export const dekanAddSubject = (subjectCredential) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: "/api/dekan/addSubject",
+				url: "api/dekan/addSubject",
 				data: subjectCredential,
 			});
 			dispatch(dekanAddSubjectFlag(true));
@@ -161,7 +161,7 @@ export const dekanUpdatePassword = (passwordData) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: "/api/dekan/updatePassword",
+				url: "api/dekan/updatePassword",
 				data: passwordData,
 			});
 			if (
