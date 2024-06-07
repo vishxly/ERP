@@ -3,7 +3,7 @@ import setAuthToken from "../utils/setAuthToken";
 import { SET_FACULTY, SET_ERRORS, SET_ERRORS_HELPER } from "../actionTypes";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-const url = "https://erp-backend-zeta.vercel.app";
+const url = "";
 
 const setFaculty = (data) => {
 	return {
@@ -35,7 +35,7 @@ export const facultyUpdatePassword = (passwordData) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: "/api/faculty/updatePassword",
+				url:url +"/api/faculty/updatePassword",
 				data: passwordData,
 			});
 			if (
@@ -59,7 +59,7 @@ export const fetchStudents = (department, year, section) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: "/api/dekan/fetchStudents",
+				url: url +"/api/dekan/fetchStudents",
 				data: { department, year, section },
 			});
 			dispatch(fetchStudentsHelper(data.result));
@@ -84,7 +84,7 @@ export const markAttendence = (
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: "/api/faculty/markAttendence",
+				url: url +"/api/faculty/markAttendence",
 				data: { selectedStudents, subjectName, department, year, section },
 			});
 			alert(`Ma'lumotlar muvaffaqiyatli Yuklandi!!!`);

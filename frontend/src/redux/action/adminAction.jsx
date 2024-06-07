@@ -4,7 +4,7 @@ import setAuthToken from "../utils/setAuthToken";
 import { SET_ADMIN, SET_ERRORS } from "../actionTypes";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-const url = "https://erp-backend-zeta.vercel.app";
+const url = "";
 
 const setAdmin = (data) => {
   return {
@@ -54,7 +54,7 @@ export const adminAddDekan = (dekanCredential) => {
     try {
       const { data } = await axios({
         method: "Post",
-        url: "/api/admin/addDekan",
+        url: url + "/api/admin/addDekan",
         data: dekanCredential,
       });
       dispatch(adminAddDekanFlag(true));
@@ -75,7 +75,7 @@ export const adminAddFaculty = (facultyCredential) => {
     try {
       const { data } = await axios({
         method: "Post",
-        url: "/api/admin/addFaculty",
+        url: url + "/api/admin/addFaculty",
         data: facultyCredential,
       });
       dispatch(adminAddFacultyFlag(true));
@@ -96,7 +96,7 @@ export const adminAddAdmin = (adminCredentails) => {
     try {
       const { data } = await axios({
         method: "Post",
-        url: "/api/admin/addAdmin",
+        url: url + "/api/admin/addAdmin",
         data: adminCredentails,
       });
       dispatch(adminAddAdminFlag(true));
@@ -114,7 +114,7 @@ export const adminAddNews = (newsCredentails) => {
     try {
       const { data } = await axios({
         method: "Post",
-        url: "/api/admin/addNewsAdmin",
+        url: url + "/api/admin/addNewsAdmin",
         data: newsCredentails,
       });
       dispatch(adminAddNewsFlag(true));
@@ -132,7 +132,7 @@ export const adminGetAllFaculty = (department) => {
     try {
       const { data } = await axios({
         method: "Post",
-        url: "/api/admin/getAllFaculty",
+        url: url + "/api/admin/getAllFaculty",
         data: department,
       });
       dispatch(adminGetAllFacultyHelper(data.result));
@@ -150,7 +150,7 @@ export const adminUpdatePassword = (passwordData) => {
     try {
       const { data } = await axios({
         method: "Post",
-        url: "/api/admin/updatePassword",
+        url: url + "/api/admin/updatePassword",
         data: passwordData,
       });
       if (
@@ -174,7 +174,7 @@ export const adminGetAllSubject = (department) => {
     try {
       const { data } = await axios({
         method: "Post",
-        url: "/api/admin/getAllSubject",
+        url: url + "/api/admin/getAllSubject",
         data: department,
       });
       dispatch(adminGetAllSubjectHelper(data.result));

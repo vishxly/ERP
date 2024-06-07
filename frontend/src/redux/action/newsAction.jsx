@@ -11,7 +11,7 @@ import {
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import axios from "../../api/axios";
-const url = "https://erp-backend-zeta.vercel.app";
+const url = "";
 
 export const setChatHistory = (data) => {
 	return {
@@ -61,7 +61,7 @@ export const newsLogin = (newsCredential) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: "/api/login",
+				url:url + "/api/login",
 				data: newsCredential,
 			});
 			const { token } = data;
@@ -116,7 +116,7 @@ export const newsUpdatePassword = (passwordData) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: "/api/news/updatePassword",
+				url:url +"/api/news/updatePassword",
 				data: passwordData,
 			});
 			if (
@@ -141,7 +141,7 @@ export const newsAddPost = (newsPost) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: "/api/news/addPost",
+				url: url +"/api/news/addPost",
 				data: newsPost,
 			});
 			dispatch(newsAddPostFlag(true));
@@ -163,7 +163,7 @@ export const newsAddGallery = (newsPost) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: "/api/news/addGallery",
+				url:url + "/api/news/addGallery",
 				data: newsPost,
 			});
 			if (!alert(`Post Uplaod Successfully`)) {

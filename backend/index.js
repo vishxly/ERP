@@ -11,18 +11,18 @@ const PORT = process.env.PORT || 5000;
 dotenv.config();
 
 let corsOption = {
-  origin: "https://erp-sand.vercel.app",
+  origin: "http://localhost:3000",
   methods: "GET,POST,PATCH,PUT,DELETE",
   credentials: true,
 };
 
-app.use(express.static("build"));
+// app.use(express.static("build"));
 // app.use(bodyParser.json({ limit: '10mb', extended: true }))
 // app.use(bodyParser.urlencoded({ limit: '10mb', extended: true }))
 
 app.use(express.json({ limit: "10mb" }));
 app.use(cors(corsOption));
-
+app.use(cors());
 mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,

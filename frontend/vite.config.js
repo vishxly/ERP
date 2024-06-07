@@ -6,12 +6,13 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-		'/api': {
-		  target: 'https://erp-backend-zeta.vercel.app',
-		  changeOrigin: true,
-		  secure: false,
-		  rewrite: (path) => path.replace(/^\/api/, ''),
-		},
-	}	
-  },open: true,
+      "/api": {
+        target: "http://localhost:5000",
+        changeOrigin: true,
+        secure: false,
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
+    },
+  },
+  open: true,
 });
