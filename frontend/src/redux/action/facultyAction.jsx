@@ -35,7 +35,7 @@ export const facultyUpdatePassword = (passwordData) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: url + "/api/faculty/updatePassword",
+				url: "/api/faculty/updatePassword",
 				data: passwordData,
 			});
 			if (
@@ -59,7 +59,7 @@ export const fetchStudents = (department, year, section) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: url + "/api/dekan/fetchStudents",
+				url: "/api/dekan/fetchStudents",
 				data: { department, year, section },
 			});
 			dispatch(fetchStudentsHelper(data.result));
@@ -84,7 +84,7 @@ export const markAttendence = (
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: url + "/api/faculty/markAttendence",
+				url: "/api/faculty/markAttendence",
 				data: { selectedStudents, subjectName, department, year, section },
 			});
 			alert(`Ma'lumotlar muvaffaqiyatli Yuklandi!!!`);

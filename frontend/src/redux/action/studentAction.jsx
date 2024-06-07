@@ -98,7 +98,7 @@ export const studentUpdatePassword = (passwordData) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: url + "/api/student/updatePassword",
+				url: "/api/student/updatePassword",
 				data: passwordData,
 			});
 			if (
@@ -122,7 +122,7 @@ export const chatHelper = (name) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: url + "/api/student/getStudentByName",
+				url: "/api/student/getStudentByName",
 				data: name,
 			});
 			dispatch(chatHelp(data.result));
@@ -136,7 +136,7 @@ export const getStudentByRegName = (registrationNumber) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: url + "/api/student/getStudentByRegName",
+				url: "/api/student/getStudentByRegName",
 				data: { registrationNumber },
 			});
 			dispatch(getStudentByRegNameHelper(data.result));
@@ -153,7 +153,7 @@ export const getOTPStudent = (email, t) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: url + "/api/forgotPassword",
+				url: "/api/forgotPassword",
 				data: email,
 			});
 			toast.success(t("send_email_toast"));
@@ -171,7 +171,7 @@ export const submitOTPStudent = (newPasswordWithOtp, navigate, t) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: url + "/api/postOTP",
+				url: "/api/postOTP",
 				data: newPasswordWithOtp,
 			});
 			toast.success(t("submit_toast"));
@@ -189,7 +189,7 @@ export const sendMessage = (room, messageobj) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: url + `/api/student/chat/${room}`,
+				url: `/api/student/chat/${room}`,
 				data: messageobj,
 			});
 		} catch (err) {
@@ -202,7 +202,7 @@ export const getPrivateConversation = (roomId) => {
 		try {
 			const { data } = await axios({
 				method: "Get",
-				url: url + `/api/student/chat/${roomId}`,
+				url: `/api/student/chat/${roomId}`,
 			});
 			dispatch(privateConversation(data.result));
 		} catch (err) {
@@ -215,7 +215,7 @@ export const getPrivateConversation2 = (roomId) => {
 		try {
 			const { data } = await axios({
 				method: "Get",
-				url: url + `/api/student/chat/${roomId}`,
+				url: `/api/student/chat/${roomId}`,
 			});
 			dispatch(privateConversation2(data.result));
 		} catch (err) {
@@ -228,7 +228,7 @@ export const previousChats = (senderName) => {
 		try {
 			const { data } = await axios({
 				method: "Get",
-				url: url + `/api/student/chat/previousChats/${senderName}`,
+				url: `/api/student/chat/previousChats/${senderName}`,
 			});
 			dispatch(previousChatsHelper(data.result));
 		} catch (err) {
@@ -241,7 +241,7 @@ export const newerChats = (receiverName) => {
 		try {
 			const { data } = await axios({
 				method: "Get",
-				url: url + `/api/student/chat/newerChats/${receiverName}`,
+				url: `/api/student/chat/newerChats/${receiverName}`,
 			});
 			dispatch(newerChatsHelper(data.result));
 		} catch (err) {
@@ -254,7 +254,7 @@ export const studentUpdate = (updatedData) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: url + `/api/student/updateProfile`,
+				url: `/api/student/updateProfile`,
 				data: updatedData,
 			});
 		} catch (err) {
@@ -267,7 +267,7 @@ export const getAllSubjects = () => {
 		try {
 			const { data } = await axios({
 				method: "Get",
-				url: url + "/api/student/getAllSubjects",
+				url: "/api/student/getAllSubjects",
 			});
 			dispatch(getAllSubjectsHelper(data.result));
 			dispatch(getMarksLoading(false));
@@ -281,7 +281,7 @@ export const fetchAttendence = () => {
 		try {
 			const { data } = await axios({
 				method: "Get",
-				url: url + "/api/student/checkAttendence",
+				url: "/api/student/checkAttendence",
 			});
 			dispatch(fetchAttendenceHelper(data.result));
 			dispatch(getMarksLoading(false));
@@ -295,7 +295,7 @@ export const getMarks = () => {
 		try {
 			const { data } = await axios({
 				method: "Get",
-				url: url + "/api/student/getMarks",
+				url: "/api/student/getMarks",
 			});
 			// console.log(data);
 			dispatch(getMarksHelper(data.result));

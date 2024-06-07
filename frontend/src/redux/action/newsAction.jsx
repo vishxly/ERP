@@ -61,7 +61,7 @@ export const newsLogin = (newsCredential) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: url + "/api/login",
+				url: "/api/login",
 				data: newsCredential,
 			});
 			const { token } = data;
@@ -116,7 +116,7 @@ export const newsUpdatePassword = (passwordData) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: url + "/api/news/updatePassword",
+				url: "/api/news/updatePassword",
 				data: passwordData,
 			});
 			if (
@@ -141,7 +141,7 @@ export const newsAddPost = (newsPost) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: url + "/api/news/addPost",
+				url: "/api/news/addPost",
 				data: newsPost,
 			});
 			dispatch(newsAddPostFlag(true));
@@ -163,7 +163,7 @@ export const newsAddGallery = (newsPost) => {
 		try {
 			const { data } = await axios({
 				method: "Post",
-				url: url + "/api/news/addGallery",
+				url: "/api/news/addGallery",
 				data: newsPost,
 			});
 			if (!alert(`Post Uplaod Successfully`)) {
