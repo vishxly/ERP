@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 dotenv.config();
 
 let corsOption = {
-  origin: "https://erp-sand.vercel.ap",
+  origin: "https://erp-vshall.vercel.app",
   methods: "GET,POST,PATCH,PUT,DELETE",
   credentials: true,
 };
