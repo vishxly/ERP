@@ -13,14 +13,20 @@ const app = express();
 let server = http.createServer(app);
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-app.use(cors());
-app.use(
-	cors({
-		origin: ["https://erp-sand.vercel.app"],
-		methods: ["GET", "POST", "PUT", "DELETE"],
-		credentials: true,
-	})
-);
+// app.use(cors());
+// app.use( 
+// 	cors({
+// 		origin: ["https://erp-sand.vercel.app"],
+// 		methods: ["GET", "POST", "PUT", "DELETE"],
+// 		credentials: true,
+// 	})
+// );
+let corsOption = {
+	origin:"https://erp-sand.vercel.app",
+	methods:"GET,POST,PATCH,PUT,DELETE",
+	credentials: true,
+}
+app.use(cors(corsOption))
 
 const adminRoutes = require("./routes/adminRoutes");
 const facultyRoutes = require("./routes/facultyRoutes");
